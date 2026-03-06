@@ -3,53 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SIGNAL PRO MADA | Terminal d'Analyse Flux</title>
+    <title> MC ANTHONIO ANALYSIS | Terminal d'Analyse Flux</title>
     <style>
         :root { --gold: #D4AF37; --bg: #0a0a0a; --panel: #161616; --text: #e0e0e0; }
-        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; overflow-x: hidden; }
-        header { background: var(--panel); padding: 15px; border-bottom: 2px solid var(--gold); text-align: center; }
-        .dashboard { display: grid; grid-template-columns: 2fr 1fr; grid-template-rows: auto auto; gap: 15px; padding: 15px; height: 90vh; }
+        body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; margin: 0; padding: 10px; }
+        header { background: var(--panel); padding: 15px; border-bottom: 2px solid var(--gold); text-align: center; margin-bottom: 15px; }
+        .grid-container { display: grid; grid-template-columns: 2fr 1fr; gap: 15px; height: 85vh; }
         .box { background: var(--panel); border-radius: 8px; border: 1px solid #333; overflow: hidden; display: flex; flex-direction: column; }
-        .box-title { background: #222; padding: 8px; font-size: 12px; font-weight: bold; color: var(--gold); text-transform: uppercase; border-bottom: 1px solid #333; }
+        .box-title { background: #222; padding: 10px; font-size: 13px; font-weight: bold; color: var(--gold); text-transform: uppercase; border-bottom: 1px solid #333; }
+        .btn-link { background: var(--gold); color: black; text-decoration: none; padding: 15px; text-align: center; font-weight: bold; margin: 10px; border-radius: 5px; font-size: 14px; }
+        .btn-link:hover { background: #b8962d; }
+        #tradingview_chart { flex-grow: 1; }
         iframe { width: 100%; height: 100%; border: none; }
-        .full-width { grid-column: span 2; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1 style="margin:0; font-size: 20px;">SIGNAL PRO MADA <span style="color:white">- TERMINAL DE FLUX</span></h1>
+    <h1 style="margin:0; font-size: 22px;">SIGNAL PRO MADA <span style="color:white">- TERMINAL DE FLUX</span></h1>
 </header>
 
-<div class="dashboard">
+<div class="grid-container">
     <div class="box">
-        <div class="box-title">1. Flux Institutionnel (TradingView + COT Indicator)</div>
+        <div class="box-title">1. FLUX INSTITUTIONNEL (XAU/USD)</div>
         <div id="tradingview_chart"></div>
         <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
         <script type="text/javascript">
           new TradingView.widget({
-            "autosize": true, "symbol": "OANDA:XAUUSD", "interval": "60", "timezone": "Africa/Nairobi",
-            "theme": "dark", "style": "1", "locale": "fr", "toolbar_bg": "#f1f3f6", "enable_publishing": false,
-            "hide_side_toolbar": false, "allow_symbol_change": true, "container_id": "tradingview_chart"
+            "autosize": true, "symbol": "OANDA:XAUUSD", "interval": "5", "timezone": "Africa/Nairobi",
+            "theme": "dark", "style": "1", "locale": "fr", "toolbar_bg": "#f1f3f6", "container_id": "tradingview_chart"
           });
         </script>
     </div>
 
     <div class="box">
-        <div class="box-title">2. CNBC Economy Flash (Actualités)</div>
-        <iframe src="https://www.cnbc.com/economy/"></iframe>
-    </div>
-
-    <div class="box">
-        <div class="box-title">3. Sentiment de la Foule (Myfxbook)</div>
-        <iframe src="https://widget.myfxbook.com/widget/outlook.html?symbols=XAUUSD"></iframe>
-    </div>
-
-    <div class="box">
-        <div class="box-title">4. Zones de Liquidité (Oanda Order Book)</div>
-        <iframe src="https://www.oanda.com/bvi-en/cfds/tools/orderbook/"></iframe>
+        <div class="box-title">2. OUTILS D'ANALYSE (CLIC DIRECT)</div>
+        <p style="padding:10px; font-size:12px; text-align:center;">Clique pour ouvrir les données réelles sans bug :</p>
+        
+        <a href="https://www.cnbc.com/economy/" target="_blank" class="btn-link">📊 OUVRIR CNBC ECONOMY (NEWS)</a>
+        <a href="https://www.oanda.com/bvi-en/cfds/tools/orderbook/" target="_blank" class="btn-link">🎯 ORDER BOOK XAU/USD (LIQUIDITÉ)</a>
+        <a href="https://www.myfxbook.com/community/outlook/XAUUSD" target="_blank" class="btn-link">👥 SENTIMENT MYFXBOOK (FOULE)</a>
+        <a href="https://www.investing.com/economic-calendar/" target="_blank" class="btn-link">📅 CALENDRIER NFP (16H30 EAT)</a>
+        
+        <div style="padding:15px; font-size:11px; color:#888; text-align:center; border-top:1px solid #333; margin-top:auto;">
+            Michel Anthonio - Signal Pro Mada © 2026
+        </div>
     </div>
 </div>
 
 </body>
-</html>
+            </html>
